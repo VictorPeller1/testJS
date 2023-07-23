@@ -169,13 +169,33 @@ boxes.forEach((box)=> {
 
 // ---------------------------------------------------------
 
+// addEventListener VS onclick
 
+//document.body.onclick = () => {
+//  console.log("bon");
+//}
+//document.body.onclick = () => {
+//  console.log("jour");
+//}
 
+// kept only 1 setting by element, the lastest written,so erase
+// the upper one, only display "jour".
+//                    -----------------
 
+// addEventListener execute both
 
+// bubbling : (default value addEventListener, 3rd param on false)
+  document.body.addEventListener('click', ()=>{
+  console.log("click 1");
+}//,false
+)
+// if 3rd parameter (boolean)
 
-
-
+//Usecapture (switch priority, "click 2" becomes the 1st event)
+document.body.addEventListener('click', ()=>{
+  console.log("click 2");
+}//,true
+)
 
 
 
