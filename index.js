@@ -149,13 +149,25 @@ form.addEventListener("submit", (e) => {
 
 })
 
+// --------------------------------------------------------
+// Load Event
 
+window.addEventListener("load", ()=>{
+  console.log("page chargée !!!")
+})
 
+//----------------------------------------------------------
+// ForEach
 
+const boxes = document.querySelectorAll(".box");
+//console.log(boxes);
+boxes.forEach((box)=> {
+  box.addEventListener("click", (e) => {
+  e.target.style.transform="scale(0.7)";
+  });
+});
 
-
-
-
+// ---------------------------------------------------------
 
 
 
