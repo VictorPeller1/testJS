@@ -197,10 +197,14 @@ document.body.addEventListener('click', ()=>{
 }//,true
 )
 
+// ---------------------------------------------------------
 
+// Stop propagation 
 
-
-
+questionContainer.addEventListener('click', (e)=> {
+  alert("test !!");
+  e.stopPropagation()
+})
 
 
 
