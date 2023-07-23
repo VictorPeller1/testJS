@@ -115,12 +115,38 @@ window.addEventListener('scroll', () => {
 const inputName = document.querySelector('input[type="text"]');
 console.log(inputName);
 let pseudo = "";
+let language = "";
 const select = document.querySelector("select");
+const form = document.querySelector("form");
 
-inputName.addEventListener("input", (e)=>{
- // console.log(e.target.value);
+inputName.addEventListener("input", (e) => {
+  // console.log(e.target.value);
   pseudo = e.target.value;
   console.log(pseudo);
+})
+
+select.addEventListener("input", (e) => {
+  // console.log(e.target.value);
+  language = e.target.value;
+})
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault(); // stuck default browser actions
+  console.log("yeees !!!")
+
+
+  if (cgv.checked) { // an id on checkbox & button replace a const/let in JS
+
+    console.log(cgv.checked);
+    document.querySelector('form > div').innerHTML= `
+    <h3>Pseudo : ${pseudo}</h3>
+    <h4>Language préféré : ${language}</h4>
+    `
+
+  } else {
+    alert("veuillez acceptez les cgv");
+  }
+
 })
 
 
